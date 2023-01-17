@@ -1,45 +1,48 @@
 ---
 export interface Props {
-  variant?: "green";
+  svg?: string;
   block?: boolean;
   width?: string;
 }
 
-const { variant, block, width } = Astro.props;
+const { svg, block, width } = Astro.props;
 ---
 
 <button
   type="button"
-  class:list={[variant, block && "block"]}
+  class:list={[block && "block"]}
   style={width ? { width } : undefined}
 >
+  {svg && <img src={svg} />}
   <slot />
 </button>
 
 <style lang="scss" scoped>
   button {
+    font-family: Poppins;
+    font-size: 22px;
     font-weight: 600;
-    font-size: 18px;
-    line-height: 22px;
-    letter-spacing: 1px;
-    border-radius: 10px;
-    padding: 24px;
+    line-height: 36px;
+    letter-spacing: 0.5px;
+    border-radius: $border-radius;
+    border: none;
+    padding: 14px 36px;
     transition: transform 0.2s ease-in-out;
 
     display: grid;
-    place-items: center;
+    grid-template-columns: 32px auto;
+    gap: 16px;
 
-    background-color: lighten($bg-color, 10%);
-    color: $text-color;
+    background-color: $bg-color;
+    color: $text-color-white;
 
+    img {
+      width: 32px;
+      height: 32px;
+    }
     &:hover {
       transform: scale(1.05);
     }
-  }
-
-  .green {
-    background-color: $green-color;
-    color: $text-color;
   }
 
   .block {
