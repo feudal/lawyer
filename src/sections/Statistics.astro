@@ -1,5 +1,80 @@
-<section>
-  <div class="container">Statistics</div>
-</section>
+---
+// TODO: ADD background image
+---
 
-<style lang="scss" scoped></style>
+<section>
+  <div class="container">
+    <h2>Some count that matters</h2>
+    <p>Our achievment in the journey depictd in numbers</p>
+
+    <ul class="statistics">
+      <li>
+        <span>30</span>
+        <span> Clients</span>
+      </li>
+      <li>
+        <span>300+</span>
+        <span> Taken business legalities</span>
+      </li>
+      <li>
+        <span>8</span>
+        <span> Years of journey</span>
+      </li>
+    </ul>
+  </div>
+</section>
+<!-- </BackgroundImage> -->
+
+<style lang="scss" scoped>
+  section {
+    padding: 55px 0;
+    background-color: $bg-color;
+    color: $text-color-white;
+    text-align: center;
+
+    h2 {
+      font-family: Playfair Display;
+      font-size: 48px;
+      font-weight: 900;
+      line-height: 64px;
+    }
+
+    p {
+      font-family: Poppins;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 32px;
+      letter-spacing: 0.5px;
+      margin-top: 8px;
+    }
+
+    .statistics {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
+      li {
+        border-right: 1px solid $text-color-white;
+
+        &:last-child {
+          border-right: none;
+        }
+
+        span:first-child {
+          display: block;
+          font-family: Poppins;
+          font-size: 48px;
+          font-weight: 800;
+          line-height: 64px;
+        }
+
+        span:last-child {
+          font-family: Poppins;
+          font-size: 18px;
+          font-weight: 400;
+          line-height: 32px;
+        }
+      }
+    }
+  }
+</style>
