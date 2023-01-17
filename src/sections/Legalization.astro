@@ -1,5 +1,81 @@
+---
+import Card from "../components/Card.astro";
+import src1 from "../images/circlelayer.svg";
+import src2 from "../images/bag.svg";
+import src3 from "../images/rocket.svg";
+import src4 from "../images/userarrows.svg";
+---
+
 <section>
-  <div class="container">Legalization</div>
+  <div class="container">
+    <div class="info">
+      <h2>Why do we help with Legalization?</h2>
+
+      <p>
+        We are here for UMKM in Moldova to carry out the legalization process,
+        which is sometimes complicated.
+      </p>
+    </div>
+
+    <div class="cards">
+      <Card
+        src={src1}
+        title="Enviromental Law"
+        description="Environmental legal issues might occur since the planned business activities are designed"
+      />
+
+      <Card
+        src={src2}
+        title="Corporate and Commercial"
+        description="We provide a complete range of services for the continuity of your business activities."
+      />
+
+      <Card
+        src={src3}
+        title="Information and Technology"
+        description="IT not followed by the existing regulation which might cause legal uncertainty and business uncertainty."
+      />
+
+      <Card
+        src={src4}
+        title="Other Services"
+        description="In dealing with disruptive economic and legal challenge, our firm also provide various legal services."
+      />
+    </div>
+  </div>
 </section>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+  section {
+    padding: 125px 0;
+    background: $bg-color-light;
+
+    .container {
+      display: flex;
+      gap: 80px;
+    }
+
+    h2 {
+      font-family: Playfair Display;
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 64px;
+      margin: 32px 0;
+    }
+
+    p {
+      font-family: Poppins;
+      font-size: 20px;
+      line-height: 36px;
+      letter-spacing: 0.5px;
+      color: $text-color-light;
+    }
+    .info {
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 30px;
+    }
+  }
+</style>
