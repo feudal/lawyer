@@ -1,0 +1,45 @@
+---
+export interface Props {
+  color?: "white";
+}
+
+const { color = "blue" } = Astro.props;
+---
+
+<div class={color}>
+  <a href="/">L</a>Lawliet
+</div>
+
+<style lang="scss" scoped>
+  div {
+    font-family: Poppins;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 23px;
+    letter-spacing: 1.5px;
+
+    a {
+      display: inline-grid;
+      place-items: center;
+      width: 36px;
+      height: 36px;
+      border-radius: $border-radius-circle;
+      margin-right: 12px;
+    }
+
+    &.blue {
+      a {
+        background-color: $bg-color;
+        color: $text-color-white;
+      }
+    }
+    &.white {
+      color: $text-color-white;
+
+      a {
+        background-color: $bg-color-white;
+        color: $text-color-blue;
+      }
+    }
+  }
+</style>
