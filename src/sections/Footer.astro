@@ -119,32 +119,34 @@ import youtube from "../images/youtube.svg";
         }
       }
 
-      .social .container {
-        padding-top: 22px;
-        padding-bottom: 22px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+      .social {
         background-color: $bg-color-medium;
-        color: $text-color-white;
-        font-family: Inter;
-        font-size: 14px;
-        line-height: 24px;
+        padding: 22px 0;
 
-        ul {
+        .container {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          gap: 1rem;
+          color: $text-color-white;
+          font-family: Inter;
+          font-size: 14px;
+          line-height: 24px;
 
-          li {
-            display: grid;
-            place-items: center;
+          ul {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
 
-            border-radius: $border-radius-circle;
-            border: 1px solid $border-color-white;
-            width: 24px;
-            height: 24px;
+            li {
+              display: grid;
+              place-items: center;
+
+              border-radius: $border-radius-circle;
+              border: 1px solid $border-color-white;
+              width: 24px;
+              height: 24px;
+            }
           }
         }
       }
