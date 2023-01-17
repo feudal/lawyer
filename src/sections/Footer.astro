@@ -1,8 +1,153 @@
-<footer class="footer">
-  <div class="container">Footer</div>
-</footer>
+---
+import Logo from "../components/Logo.astro";
+import instagram from "../images/instagram.svg";
+import dribble from "../images/dribble.svg";
+import twitter from "../images/twitter.svg";
+import youtube from "../images/youtube.svg";
+---
 
-<style lang="scss" scoped>
-  .footer {
-  }
-</style>
+<>
+  <footer>
+    <div class="container">
+      <Logo color="white" />
+
+      <div class="menus">
+        <nav>
+          <h3>Product</h3>
+          <ul>
+            <li><a href="/">Overview</a></li>
+            <li><a href="/">Fearures</a></li>
+            <li><a href="/">Tutorials</a></li>
+            <li><a href="/">Pricing</a></li>
+            <li><a href="/">Releases</a></li>
+          </ul>
+        </nav>
+        <nav>
+          <h3>Company</h3>
+          <ul>
+            <li><a href="/">About</a></li>
+            <li><a href="/">Press</a></li>
+            <li><a href="/">Careers</a></li>
+            <li><a href="/">Contact</a></li>
+            <li><a href="/">Partners</a></li>
+          </ul>
+        </nav>
+        <nav>
+          <h3>Support</h3>
+          <ul>
+            <li><a href="/">Help Center</a></li>
+            <li><a href="/">Terms of service</a></li>
+            <li><a href="/">Legal</a></li>
+            <li><a href="/">Privecy Policy</a></li>
+            <li><a href="/">Status</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <div class="social">
+    <div class="container">
+      <!-- copyright -->
+      <p>
+        &copy; {new Date().getFullYear()}
+        Lawliet. All rights reserved.
+      </p>
+
+      <!-- social -->
+      <ul>
+        <li>
+          <a href="/">
+            <img src={instagram} alt="instagram" />
+          </a>
+        </li>
+        <li>
+          <a href="/">
+            <img src={dribble} alt="dribble" />
+          </a>
+        </li>
+        <li>
+          <a href="/">
+            <img src={twitter} alt="twitter" />
+          </a>
+        </li>
+        <li>
+          <a href="/">
+            <img src={youtube} alt="youtube" />
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <>
+    <style lang="scss" scoped>
+      footer {
+        background-color: $bg-color;
+        padding: 75px 0 100px;
+
+        .container {
+          display: flex;
+          justify-content: space-between;
+        }
+        .menus {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 30px;
+
+          nav {
+            color: $text-color-white;
+            font-family: Inter;
+
+            h3 {
+              font-size: 20px;
+              line-height: 30px;
+              margin-bottom: 32px;
+            }
+
+            li {
+              font-size: 16px;
+              line-height: 26px;
+              margin-bottom: 12px;
+
+              a {
+                &:hover {
+                  text-decoration: underline;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .social .container {
+        padding-top: 22px;
+        padding-bottom: 22px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $bg-color-medium;
+        color: $text-color-white;
+        font-family: Inter;
+        font-size: 14px;
+        line-height: 24px;
+
+        ul {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 1rem;
+
+          li {
+            display: grid;
+            place-items: center;
+
+            border-radius: $border-radius-circle;
+            border: 1px solid $border-color-white;
+            width: 24px;
+            height: 24px;
+          }
+        }
+      }
+    </style>
+  </>
+</>
