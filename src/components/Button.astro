@@ -1,0 +1,48 @@
+---
+export interface Props {
+  variant?: "green";
+  block?: boolean;
+  width?: string;
+}
+
+const { variant, block, width } = Astro.props;
+---
+
+<button
+  type="button"
+  class:list={[variant, block && "block"]}
+  style={width ? { width } : undefined}
+>
+  <slot />
+</button>
+
+<style lang="scss" scoped>
+  button {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 1px;
+    border-radius: 10px;
+    padding: 24px;
+    transition: transform 0.2s ease-in-out;
+
+    display: grid;
+    place-items: center;
+
+    background-color: lighten($bg-color, 10%);
+    color: $text-color;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  .green {
+    background-color: $green-color;
+    color: $text-color;
+  }
+
+  .block {
+    width: 100%;
+  }
+</style>

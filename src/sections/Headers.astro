@@ -1,0 +1,72 @@
+<header>
+  <div class="container">
+    <div>
+      <a href="/">Lawliet</a>
+      <nav>
+        <ul>
+          <li>
+            <a href="/contact">Contact</a>
+          </li>
+          <li>
+            <a href="/testimonials">Testimonials</a>
+          </li>
+          <li>
+            <a href="/about">about</a>
+          </li>
+          <li>
+            <a href="/terms">terms</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<style lang="scss">
+  @mixin flex-space-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  header {
+    margin-top: 40px;
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+
+    & > div > div {
+      @include flex-space-between;
+      & > a {
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 22px;
+        letter-spacing: 1px;
+      }
+    }
+
+    ul {
+      @include flex-space-between;
+      gap: 2rem;
+    }
+    li {
+      border-bottom: 3px solid transparent;
+
+      &::after {
+        content: "";
+        display: block;
+        width: 80%;
+        height: 2px;
+        margin: 0 auto;
+        background-color: red;
+        border-radius: 2px;
+        transform: scaleX(0);
+        transition: transform 0.3s ease-in-out;
+      }
+      &:hover::after {
+        transform: scaleX(1);
+      }
+    }
+  }
+</style>

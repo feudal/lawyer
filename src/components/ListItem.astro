@@ -1,0 +1,62 @@
+---
+import arrow from "../images/arrow.svg";
+export interface Props {
+  order: number;
+  title: string;
+  videoCount: number;
+  link: string;
+}
+
+const { order, title, videoCount, link } = Astro.props;
+---
+
+<li>
+  <span>{String(order).padStart(2, "0")}</span>
+
+  <div>
+    <h3>{title}</h3>
+    <span>{`${videoCount} ${videoCount === 1 ? "video" : "videos"}`}</span>
+  </div>
+
+  <a href={link}>
+    <img src={arrow} alt="arrow" />
+  </a>
+</li>
+
+<style lang="scss" scoped>
+  li {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    width: 100%;
+    border-bottom: 0.5px solid #fff;
+    padding: 50px 0;
+
+    & > span {
+      font-size: 25px;
+      font-weight: 600;
+      line-height: 35px;
+    }
+
+    h3 {
+      font-size: 50px;
+      line-height: 70px;
+      font-weight: 400;
+      letter-spacing: 0.8px;
+    }
+    div span {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 23px;
+      letter-spacing: 0.5px;
+    }
+
+    a {
+      font-size: 25px;
+      font-weight: 600;
+      line-height: 35px;
+      text-decoration: none;
+      margin-left: auto;
+    }
+  }
+</style>
