@@ -1,5 +1,72 @@
+---
+import ReviewCard from "../components/ReviewCard.astro";
+import review1 from "../images/photo.jpg";
+---
+
 <section>
-  <div class="container">Testimonial</div>
+  <div class="container">
+    <h2>Clents Testimonial</h2>
+
+    <div class="grid">
+      <ReviewCard
+        title="Incredible Experience"
+        text="We had an incredible experience working with Landify and were impressed they made such a big difference in only three weeks. Our team is so grateful for the wonderful improvements they made and their ability to get familiar with the concept so quickly."
+        src={review1}
+        name="Anya Tailor Joy"
+        position="CEO of Company"
+      />
+
+      <ReviewCard
+        title="Dependable, Responsive, Professional Partner"
+        text="Fermin Apps has collaborated with Landify team for several projects such as Photo Sharing Apps and Custom Social Networking Apps. The experience has been pleasant, professional and exceeding our expectations. "
+        src={review1}
+        name="Anya Tailor Joy"
+        position="CEO of Company"
+      />
+
+      <ReviewCard
+        title="Incredible Experience"
+        text="We had an incredible experience working with Landify and were impressed they made such a big difference in only three weeks. Our team is so grateful for the wonderful improvements they made and their ability to get familiar with the concept so quickly."
+        src={review1}
+        name="Anya Tailor Joy"
+        position="CEO of Company"
+      />
+
+      <ReviewCard
+        title="Dependable, Responsive, Professional Partner"
+        text="Fermin Apps has collaborated with Landify team for several projects such as Photo Sharing Apps and Custom Social Networking Apps. The experience has been pleasant, professional and exceeding our expectations. "
+        src={review1}
+        name="Anya Tailor Joy"
+        position="CEO of Company"
+      />
+    </div>
+  </div>
 </section>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+  section {
+    padding: 60px 0 90px;
+    background-color: $bg-color-light;
+
+    h2 {
+      font-family: Playfair Display;
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 64px;
+      letter-spacing: 0.5px;
+      text-align: center;
+
+      margin-bottom: 50px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 30px;
+
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+</style>

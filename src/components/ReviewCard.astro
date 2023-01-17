@@ -1,0 +1,59 @@
+---
+import Card from "./Card.astro";
+
+export interface Props {
+  title: string;
+  text: string;
+
+  src: string;
+  name: string;
+  position: string;
+}
+
+const { title, text, src, name, position } = Astro.props;
+---
+
+<div class="card">
+  <Card align="center" title={title} description={text} triangle />
+
+  <div class="client-info">
+    <img src={src} alt="avatar" />
+    <div>
+      <h3>{name}</h3>
+      <p>{position}</p>
+    </div>
+  </div>
+</div>
+
+<style lang="scss" scoped>
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .client-info {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+
+    img {
+      width: 56px;
+      height: 56px;
+      border-radius: $border-radius-circle;
+      margin-right: 16px;
+    }
+
+    h3 {
+      font-family: Inter;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 28px;
+    }
+
+    p {
+      font-family: Inter;
+      font-size: 14px;
+      line-height: 24px;
+    }
+  }
+</style>

@@ -1,31 +1,62 @@
 ---
 export interface Props {
-  src: string;
+  src?: string;
   title: string;
   description: string;
+  align?: "center";
+  triangle?: boolean;
 }
 
-const { src, title, description } = Astro.props;
+const { src, title, description, align, triangle } = Astro.props;
 ---
 
-<div class="card">
+<div
+  class="card"
+  style={{
+    textAlign: align === "center" ? "center" : "left",
+  }}
+>
   {src && <img src={src} alt={title} />}
   <div>
     <h4>{title}</h4>
     <p>{description}</p>
   </div>
+
+  {triangle && <div class:list={[{ triangle: triangle }]} />}
 </div>
 
 <style lang="scss" scoped>
   .card {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 24px;
+    padding: 28px;
 
     background: #fcfcfc;
     box-shadow: 0px 18px 58px 16px rgba(0, 0, 0, 0.06);
     border-radius: $border-radius;
+
+    .triangle {
+      position: absolute;
+      bottom: -14px;
+      left: calc(50% - 12px);
+      height: 14px;
+      width: 24px;
+      overflow: hidden;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        top: -12px;
+        left: 2px;
+        background: $bg-color-white;
+        transform: rotate(45deg);
+        border-radius: 3px;
+      }
+    }
 
     img {
       width: 37px;
@@ -45,7 +76,6 @@ const { src, title, description } = Astro.props;
       font-family: Plus Jakarta Sans;
       font-size: 14px;
       line-height: 24px;
-      letter-spacing: 0.3px;
     }
   }
 </style>
