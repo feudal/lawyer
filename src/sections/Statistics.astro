@@ -1,8 +1,11 @@
 ---
-// TODO: ADD background image
+import pattern from "../images/patterns.svg";
 ---
 
 <section>
+  <div class="bg">
+    <img src={pattern} />
+  </div>
   <div class="container">
     <h2>Some count that matters</h2>
     <p>Our achievment in the journey depictd in numbers</p>
@@ -23,14 +26,27 @@
     </ul>
   </div>
 </section>
-<!-- </BackgroundImage> -->
 
 <style lang="scss" scoped>
   section {
+    position: relative;
     padding: 55px 0;
     background-color: $bg-color;
     color: $text-color-white;
     text-align: center;
+
+    .bg {
+      position: absolute;
+      top: 0;
+      min-width: 100%;
+      height: 100%;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
 
     h2 {
       font-family: Playfair Display;
