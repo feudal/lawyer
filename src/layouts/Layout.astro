@@ -31,3 +31,16 @@ const { title = "Lawyer" } = Astro.props as Props;
 <style lang="scss">
   @import "../styles/index.scss";
 </style>
+
+<script>
+  import EmblaCarousel, { EmblaOptionsType } from "embla-carousel";
+
+  const emblaNode = document.querySelector(".embla") as HTMLElement;
+  const options: EmblaOptionsType = {
+    slidesToScroll: "auto",
+    containScroll: "trimSnaps",
+    align: "start",
+  };
+
+  const embla = EmblaCarousel(emblaNode, options);
+</script>

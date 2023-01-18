@@ -7,43 +7,67 @@ import review1 from "../images/photo.jpg";
   <div class="container">
     <h2>Clents Testimonial</h2>
 
-    <div class="grid">
-      <ReviewCard
-        title="Incredible Experience"
-        text="We had an incredible experience working with Landify and were impressed they made such a big difference in only three weeks. Our team is so grateful for the wonderful improvements they made and their ability to get familiar with the concept so quickly."
-        src={review1}
-        name="Anya Tailor Joy"
-        position="CEO of Company"
-      />
+    <div class="embla">
+      <div class="embla__container">
+        <div class="embla__slide">
+          <ReviewCard
+            title="Incredible Experience"
+            text="We had an incredible experience working with Landify and were impressed they made such a big difference in only three weeks. Our team is so grateful for the wonderful improvements they made and their ability to get familiar with the concept so quickly."
+            src={review1}
+            name="Anya Tailor Joy"
+            position="CEO of Company"
+          />
+        </div>
 
-      <ReviewCard
-        title="Dependable, Responsive, Professional Partner"
-        text="Fermin Apps has collaborated with Landify team for several projects such as Photo Sharing Apps and Custom Social Networking Apps. The experience has been pleasant, professional and exceeding our expectations. "
-        src={review1}
-        name="Anya Tailor Joy"
-        position="CEO of Company"
-      />
+        <div class="embla__slide">
+          <ReviewCard
+            title="Dependable, Responsive, Professional Partner"
+            text="Fermin Apps has collaborated with Landify team for several projects such as Photo Sharing Apps and Custom Social Networking Apps. The experience has been pleasant, professional and exceeding our expectations. "
+            src={review1}
+            name="Anya Tailor Joy"
+            position="CEO of Company"
+          />
+        </div>
 
-      <ReviewCard
-        title="Incredible Experience"
-        text="We had an incredible experience working with Landify and were impressed they made such a big difference in only three weeks. Our team is so grateful for the wonderful improvements they made and their ability to get familiar with the concept so quickly."
-        src={review1}
-        name="Anya Tailor Joy"
-        position="CEO of Company"
-      />
+        <div class="embla__slide">
+          <ReviewCard
+            title="Incredible Experience"
+            text="We had an incredible experience working with Landify and were impressed they made such a big difference in only three weeks. Our team is so grateful for the wonderful improvements they made and their ability to get familiar with the concept so quickly."
+            src={review1}
+            name="Anya Tailor Joy"
+            position="CEO of Company"
+          />
+        </div>
 
-      <ReviewCard
-        title="Dependable, Responsive, Professional Partner"
-        text="Fermin Apps has collaborated with Landify team for several projects such as Photo Sharing Apps and Custom Social Networking Apps. The experience has been pleasant, professional and exceeding our expectations. "
-        src={review1}
-        name="Anya Tailor Joy"
-        position="CEO of Company"
-      />
+        <div class="embla__slide">
+          <ReviewCard
+            title="Dependable, Responsive, Professional Partner"
+            text="Fermin Apps has collaborated with Landify team for several projects such as Photo Sharing Apps and Custom Social Networking Apps. The experience has been pleasant, professional and exceeding our expectations. "
+            src={review1}
+            name="Anya Tailor Joy"
+            position="CEO of Company"
+          />
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <style lang="scss" scoped>
+  .embla {
+    position: relative;
+    display: flex;
+  }
+  .embla__container {
+    display: flex;
+    flex: 0 0 50%;
+  }
+  .embla__slide {
+    flex: 0 0 50%;
+    min-width: 0;
+    margin-right: 20px;
+  }
+
   section {
     padding: 60px 0 90px;
     background-color: $bg-color-light;
