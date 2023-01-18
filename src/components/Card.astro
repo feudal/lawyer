@@ -10,14 +10,9 @@ export interface Props {
 const { src, title, description, align, triangle } = Astro.props;
 ---
 
-<div
-  class="card"
-  style={{
-    textAlign: align === "center" ? "center" : "left",
-  }}
->
+<div class="card">
   {src && <img src={src} alt={title} />}
-  <div>
+  <div style={{ textAlign: align === "center" ? "center" : "left" }}>
     <h4>{title}</h4>
     <p>{description}</p>
   </div>
@@ -58,24 +53,28 @@ const { src, title, description, align, triangle } = Astro.props;
       }
     }
 
-    img {
-      width: 37px;
-      height: 37px;
-      margin-bottom: 18px;
-    }
+    div {
+      width: 100%;
 
-    h4 {
-      font-family: Playfair Display;
-      font-size: 22px;
-      font-weight: 700;
-      line-height: 22px;
-      margin-bottom: 10px;
-    }
+      img {
+        width: 37px;
+        height: 37px;
+        margin-bottom: 18px;
+      }
 
-    p {
-      font-family: Plus Jakarta Sans;
-      font-size: 14px;
-      line-height: 24px;
+      h4 {
+        font-family: Playfair Display;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 22px;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-family: Plus Jakarta Sans;
+        font-size: 14px;
+        line-height: 24px;
+      }
     }
   }
 </style>
